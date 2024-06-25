@@ -26,18 +26,18 @@ public class AutoriController {
     }
 
     @GetMapping("/{autoreId}")
-    private Autore findAutoreById(@PathVariable long id){
-        return this.autoriService.findById(id);
+    private Autore findAutoreById(@PathVariable long autoreId){
+        return this.autoriService.findById(autoreId);
     }
 
     @PutMapping("/{autoreId}")
-    private Autore findAndUpdateAutoreById(@PathVariable long id,@RequestBody Autore body){
-        return this.autoriService.findByIdAndUpdate(id,body);
+    private Autore findAndUpdateAutoreById(@PathVariable long autoreId,@RequestBody Autore body){
+        return this.autoriService.findByIdAndUpdate(autoreId,body);
     }
 
     @DeleteMapping("/{autoreId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    private void findAndDeleteAutoreById(@PathVariable long id){
-        this.autoriService.findByIdAndDelete(id);
+    private void findAndDeleteAutoreById(@PathVariable long autoreId){
+        this.autoriService.findByIdAndDelete(autoreId);
     }
 }

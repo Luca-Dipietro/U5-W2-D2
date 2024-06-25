@@ -26,18 +26,18 @@ public class BlogPostsController {
     }
 
     @GetMapping("/{blogPostId}")
-    private BlogPost findBlogPostById(@PathVariable long id){
-        return this.blogPostsService.findById(id);
+    private BlogPost findBlogPostById(@PathVariable long blogPostId){
+        return this.blogPostsService.findById(blogPostId);
     }
 
     @PutMapping("/{blogPostId}")
-    private BlogPost findAndUpdateBlogPostById(@PathVariable long id,@RequestBody BlogPost body){
-        return this.blogPostsService.findByIdAndUpdate(id,body);
+    private BlogPost findAndUpdateBlogPostById(@PathVariable long blogPostId,@RequestBody BlogPost body){
+        return this.blogPostsService.findByIdAndUpdate(blogPostId,body);
     }
 
     @DeleteMapping("/{blogPostId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    private void findAndDeleteBlogPostById(@PathVariable long id){
-        this.blogPostsService.findByIdAndDelete(id);
+    private void findAndDeleteBlogPostById(@PathVariable long blogPostId){
+        this.blogPostsService.findByIdAndDelete(blogPostId);
     }
 }

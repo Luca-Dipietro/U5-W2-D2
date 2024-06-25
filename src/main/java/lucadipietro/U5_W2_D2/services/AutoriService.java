@@ -12,6 +12,8 @@ import java.util.Random;
 
 @Service
 public class AutoriService {
+    Random rnd = new Random();
+
     private List<Autore> autoriList = new ArrayList<>();
 
     public List<Autore> getAutoriList(){
@@ -19,10 +21,9 @@ public class AutoriService {
     }
 
     public Autore save(Autore body){
-        Random rnd = new Random();
         body.setId(rnd.nextLong(1,100));
         body.setDataDiNascita(LocalDate.of(rnd.nextInt(1980,2006),rnd.nextInt(1,12), rnd.nextInt(1,31)));
-        body.setAvatar("https://ui-avatars.com/api/?name="+body.getNome()+body.getCognome());
+        body.setAvatar("https://ui-avatars.com/api/?name=" + body.getNome() + body.getCognome());
         this.autoriList.add(body);
         return body;
     }
@@ -49,7 +50,8 @@ public class AutoriService {
                 found.setNome(updateAutore.getNome());
                 found.setCognome(updateAutore.getCognome());
                 found.setEmail(updateAutore.getEmail());
-                found.setDataDiNascita(updateAutore.getDataDiNascita());
+                found.setDataDiNascita(LocalDate.of(rnd.nextInt(1980,2006),rnd.nextInt(1,12), rnd.nextInt(1,31)));
+                found.setAvatar("https://ui-avatars.com/api/?name=" + updateAutore.getNome() + updateAutore.getCognome());
             }
         }
         if(found == null){

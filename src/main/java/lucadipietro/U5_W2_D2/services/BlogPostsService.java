@@ -11,6 +11,8 @@ import java.util.Random;
 
 @Service
 public class BlogPostsService {
+    Random rnd = new Random();
+
     private List<BlogPost> blogPostList = new ArrayList<>();
 
     public List<BlogPost> getBlogPostList(){
@@ -18,7 +20,6 @@ public class BlogPostsService {
     }
 
     public BlogPost save(BlogPost body){
-        Random rnd = new Random();
         body.setId(rnd.nextLong(1,100));
         body.setCover("https://picsum.photos/" + rnd.nextInt(1,300) + "/" + rnd.nextInt(1,300));
         body.setTempoDiLettura(rnd.nextInt(1,30));
@@ -47,9 +48,9 @@ public class BlogPostsService {
                 found = blogPost;
                 found.setCategoria(updateBlogPost.getCategoria());
                 found.setTitolo(updateBlogPost.getTitolo());
-                found.setCover(updateBlogPost.getCover());
+                found.setCover("https://picsum.photos/" + rnd.nextInt(1,300) + "/" + rnd.nextInt(1,300));
                 found.setContenuto(updateBlogPost.getContenuto());
-                found.setTempoDiLettura(updateBlogPost.getTempoDiLettura());
+                found.setTempoDiLettura(rnd.nextInt(1,30));
             }
         }
         if(found == null){
