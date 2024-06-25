@@ -20,6 +20,7 @@ public class BlogPostsService {
     public BlogPost save(BlogPost body){
         Random rnd = new Random();
         body.setId(rnd.nextLong(1,100));
+        body.setCover("https://picsum.photos/" + rnd.nextInt(1,300) + "/" + rnd.nextInt(1,300));
         body.setTempoDiLettura(rnd.nextInt(1,30));
         this.blogPostList.add(body);
         return body;
