@@ -1,7 +1,6 @@
 package lucadipietro.U5_W2_D2.controllers;
 
 import lucadipietro.U5_W2_D2.entities.Autore;
-import lucadipietro.U5_W2_D2.entities.BlogPost;
 import lucadipietro.U5_W2_D2.services.AutoriService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,9 +1,7 @@
 package lucadipietro.U5_W2_D2.services;
 
 import lucadipietro.U5_W2_D2.entities.Autore;
-import lucadipietro.U5_W2_D2.entities.BlogPost;
 import lucadipietro.U5_W2_D2.exceptions.NotFoundException;
-import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
