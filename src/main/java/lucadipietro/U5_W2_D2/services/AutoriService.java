@@ -3,8 +3,10 @@ package lucadipietro.U5_W2_D2.services;
 import lucadipietro.U5_W2_D2.entities.Autore;
 import lucadipietro.U5_W2_D2.entities.BlogPost;
 import lucadipietro.U5_W2_D2.exceptions.NotFoundException;
+import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -21,6 +23,7 @@ public class AutoriService {
     public Autore save(Autore body){
         Random rnd = new Random();
         body.setId(rnd.nextLong(1,100));
+        body.setDataDiNascita(LocalDate.of(rnd.nextInt(1980,2006),rnd.nextInt(1,12), rnd.nextInt(1,31)));
         body.setAvatar("https://ui-avatars.com/api/?name="+body.getNome()+body.getCognome());
         this.autoriList.add(body);
         return body;
